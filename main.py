@@ -1,9 +1,3 @@
-
-print(f"Пример ввода. Например, дано число 1+2i \n В программу необходимо передать в следующем виде: \n 1,2")
-a, b = map(int, input("Введите действительную и мнимую часть 1-го числа через запятую: ").replace(" ", "").split(","))
-c, d = map(int, input("Введите действительную и мнимую часть 2-го числа через запятую: ").replace(" ", "").split(","))
-operator = input("Введите знак математической операции: +, * или / ").replace(" ", "")
-
 class ComplexNumber:
     def __init__(self, real, imag):
         self.real = real
@@ -27,7 +21,12 @@ class ComplexNumber:
         real = (self.real * other.real + self.imag * other.imag) / denom
         imag = (self.imag * other.real - self.real * other.imag) / denom
         return ComplexNumber(real, imag)
- 
+
+print(f"Пример ввода. Например, дано число 1+2i \n В программу необходимо передать в следующем виде: \n 1,2")
+a, b = map(int, input("Введите действительную и мнимую часть 1-го числа через запятую: ").replace(" ", "").split(","))
+c, d = map(int, input("Введите действительную и мнимую часть 2-го числа через запятую: ").replace(" ", "").split(","))
+operator = input("Введите знак математической операции: +, * или / ").replace(" ", "")
+
 z1 = ComplexNumber(a, b)
 z2 = ComplexNumber(c, d)
 
@@ -37,4 +36,6 @@ elif (operator == "*"):
     print("Умножение :",  z1 * z2)
 elif (operator == "/"):
     print("Деление :",  z1 / z2)
+else:
+    print("Введите корректный оператор!")
 
